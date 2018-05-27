@@ -4,8 +4,8 @@
   "description": "Backend for e-commerce",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "babel-node src/app.js --presets es2015"
+    "dev": "babel-node src/app.js --presets es2015",
+    "test": "mocha --compilers js:babel-core/register --no-deprecation"
   },
   "keywords": [],
   "author": "Mauricio Fraga Jr",
@@ -18,6 +18,8 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1"
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
   }
 }
