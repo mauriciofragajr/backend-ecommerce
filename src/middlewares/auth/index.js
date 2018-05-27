@@ -1,12 +1,13 @@
 import * as jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
+import chalk from 'chalk';
 
 dotenv.config();
 
 const SECRET_KEY = process.env.SECRET_KEY;
 
 const authMiddleware = (req, res, next) => {
-    console.log('================ AUTH ================');
+    console.log(chalk.inverse('================ AUTH ================'));
     const authHeader = req.headers.authorization;
 
     if (!authHeader)
@@ -38,7 +39,6 @@ const authMiddleware = (req, res, next) => {
         req.userId = decoded.params.id;
         req.userEmail = decoded.params.email;
         console.log(decoded.params);
-        console.log('======================================')
 
         return next();
     })

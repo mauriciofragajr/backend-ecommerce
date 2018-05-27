@@ -2,6 +2,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import * as dotenv from 'dotenv';
+import chalk from 'chalk';
 // ROUTES
 import homeRoute from './routes/home';
 import authRoute from './routes/auth';
@@ -23,5 +24,5 @@ app.use('/api', homeRoute);
 app.set('port', process.env.PORT || 8085);
 
 app.listen(app.get('port'), function () {
-    console.log(`Example app listening on port ${app.get('port')}!`)
+    console.log(chalk.underline(`Server listening on port ${app.get('port')}!`));
 });
