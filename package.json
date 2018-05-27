@@ -11,10 +11,13 @@
   "author": "Mauricio Fraga Jr",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
-    "mongoose": "^5.1.2"
+    "jsonwebtoken": "^8.2.1",
+    "mongoose": "^5.1.2",
+    "nodemailer": "^4.6.5"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import * as dotenv from 'dotenv';
 // ROUTES
 import homeRoute from './routes/home';
+import authRoute from './routes/auth';
 // MIDDLEWARES
 import log from './middlewares/log';
 
@@ -16,7 +17,8 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(log);
-app.use('/', homeRoute);
+app.use('/auth', authRoute);
+app.use('/api', homeRoute);
 
 app.set('port', process.env.PORT || 8085);
 
