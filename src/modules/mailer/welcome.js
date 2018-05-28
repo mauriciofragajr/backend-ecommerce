@@ -17,6 +17,6 @@ const welcomeEmail = (email, name) => {
         }
         console.log('e-mail sent', info);
     });
-}
+};
 
 export default welcomeEmail;

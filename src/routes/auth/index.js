@@ -1,6 +1,8 @@
 import express from 'express';
 import User from '../../models/User';
-import transport from '../../modules/mailer';
+
+// import transport from '../../modules/mailer';
+
 import dotenv from 'dotenv';
 import * as jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
@@ -28,7 +30,7 @@ authRoute.post('/login', async (req, res) => {
 
     const user = await User.findOne({
         email
-    }).select('+password');
+    }).select('+password +manager');
 
     if (!user)
         return res.status(400).send({

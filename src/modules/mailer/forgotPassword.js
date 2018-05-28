@@ -17,6 +17,6 @@ const forgotPassword = (email, token) => {
         }
         console.log('e-mail sent', info);
     });
-}
+};
 
 export default forgotPassword;
