@@ -9,6 +9,7 @@ What things you need to install the software and how to install them
 ```
 node
 npm or yarn
+mongodb running
 ```
 
 ### Installing
@@ -35,8 +36,12 @@ npm run dev
 
 ## Built With
 
-* [Express](http://expressjs.com/)
-* [dotenv](https://www.npmjs.com/package/dotenv)
+* [Express](http://expressjs.com/) - Server NodeJS
+* [dotenv](https://www.npmjs.com/package/dotenv) - Privates configurarions
+* [jwt](https://jwt.io/) - Auth
+* [chalk](https://github.com/chalk/chalk) - Custom text in console log
+* [mongoose](http://mongoosejs.com) - ORM for mongodb
+* [nodemailer](https://nodemailer.com/about/) - Is a module for Node.js
 * [babel](https://babeljs.io/)
 
 ## Contributing
