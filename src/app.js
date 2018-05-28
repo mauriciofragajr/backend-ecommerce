@@ -6,6 +6,7 @@ import chalk from 'chalk';
 // ROUTES
 import homeRoute from './routes/home';
 import authRoute from './routes/auth';
+import productRoute from './routes/product';
 // MIDDLEWARES
 import log from './middlewares/log';
 
@@ -20,6 +21,7 @@ app.use(bodyParser.urlencoded({
 app.use(log);
 app.use('/auth', authRoute);
 app.use('/api', homeRoute);
+app.use('/api/products', productRoute);
 
 app.set('port', process.env.PORT || 8085);
 

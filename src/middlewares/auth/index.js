@@ -12,7 +12,8 @@ const authMiddleware = (req, res, next) => {
 
     if (!authHeader)
         return res.status(401).send({
-            error: "No token provided"
+            error: "No token provided",
+            code: "TOKEN"
         });
 
     //Bearer cafdsfsd7f987sdf8a7df89sdfdsf7af
@@ -20,20 +21,23 @@ const authMiddleware = (req, res, next) => {
 
     if (!parts.length === 2)
         return res.status(401).send({
-            error: "Token error"
+            error: "Token error",
+            code: "TOKEN"
         });
 
     const [scheme, token] = parts;
 
     if (!/^Bearer$/i.test(scheme)) {
         return res.status(401).send({
-            error: 'Token malformatted'
+            error: 'Token malformatted',
+            code: "TOKEN"
         });
     }
 
     jwt.verify(token, SECRET_KEY, (err, decoded) => {
         if (err) return res.status(401).send({
-            error: 'Token invalid'
+            error: 'Token invalid',
+            code: "TOKEN"
         });
 
         req.userId = decoded.params.id;
@@ -41,7 +45,7 @@ const authMiddleware = (req, res, next) => {
         console.log(decoded.params);
 
         return next();
-    })
-}
+    });
+};
 
 export default authMiddleware;

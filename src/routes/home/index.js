@@ -1,11 +1,10 @@
 import express from 'express';
-import User from '../../models/User';
 import transport from '../../modules/mailer';
-import authMiddleware from '../../middlewares/auth';
+// import authMiddleware from '../../middlewares/auth';
 
 let homeRoute = express.Router();
 
-homeRoute.use(authMiddleware);
+// homeRoute.use(authMiddleware);
 
 homeRoute.get('/testEmail', async (req, res) => {
     let mailOptions = {
